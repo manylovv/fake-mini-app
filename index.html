@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FakeMiniApp</title>
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+  </head>
+  <body style="font-family: sans-serif">
+    <div
+      style="
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        font-size: 16px;
+      "
+    >
+      <button id="copy-init-data" style="cursor: pointer">
+        Click to copy Telegram.WebApp.initData
+      </button>
+
+      <script>
+        document
+          .getElementById('copy-init-data')
+          .addEventListener('click', () => {
+            navigator.clipboard.writeText(Telegram.WebApp.initData);
+            alert('copied!');
+          });
+      </script>
+    </div>
+  </body>
+</html>
