@@ -27,7 +27,14 @@
         document
           .getElementById('copy-init-data')
           .addEventListener('click', () => {
-            navigator.clipboard.writeText(Telegram.WebApp.initData);
+            const initData = Telegram.WebApp.initData;
+
+            if (!initData) {
+              alert('initData is not available');
+              return;
+            }
+
+            navigator.clipboard.writeText(initData);
             alert('copied!');
           });
       </script>
